@@ -12,12 +12,8 @@ knitr::opts_chunk$set(echo = TRUE)
 The purpose of this assignment is to demonstrate use of R Markdown and knitr in presentation of data.
 
 ##Loading and processing the data
-The data needs to be downloaded first, then processed.
+The data needs to be processed first.
 ```{r getandcleandata}
-dir.create("./stepdata")
-setwd("./stepdata")
-fileurl <- "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip"
-download.file(fileurl, "activity.zip", method = "curl")
 unzip("activity.zip")
 activity <- read.csv("activity.csv")
 activity$interval <- sprintf("%04d", activity$interval)
