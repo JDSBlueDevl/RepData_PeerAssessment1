@@ -190,8 +190,8 @@ ggplot(intervalsteps, aes(POSIX, steps_interval)) + geom_line() +
 <div id="imputing-missing-values" class="section level2">
 <h2>Imputing missing values</h2>
 <p>There are a large number of NA values in this set.</p>
-<pre class="r"><code>mean(is.na(activity$steps))</code></pre>
-<pre><code>## [1] 0.1311475</code></pre>
+<pre class="r"><code>sum(is.na(activity$steps))</code></pre>
+<pre><code>## [1] 2304</code></pre>
 <p>Thus, I am imputing missing data. To do this, I am using the K-means clusering algorithm in the impute package from Bioconductor.</p>
 <pre class="r"><code>if(&quot;impute&quot; %in% rownames(installed.packages()) == FALSE) {
     source(&quot;https://bioconductor.org/biocLite.R&quot;)

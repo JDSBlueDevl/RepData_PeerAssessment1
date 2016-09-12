@@ -106,11 +106,11 @@ subset(as.data.frame(intervalsteps),
 There are a large number of NA values in this set.
 
 ```r
-mean(is.na(activity$steps))
+sum(is.na(activity$steps))
 ```
 
 ```
-## [1] 0.1311475
+## [1] 2304
 ```
 
 Thus, I am imputing missing data.  To do this, I am using the K-means clusering algorithm in the impute package from Bioconductor.
